@@ -2,6 +2,7 @@ import argparse
 import requests
 import threading
 import random
+import os
 from tools import colorprint
 from tools import useragent
 from tools import get_refers
@@ -10,12 +11,19 @@ parser.add_argument('--threads', type=int, required=True)
 parser.add_argument('--url', type=str, required=True)
 args = parser.parse_args()
 
+count = 0
 def yazitura():
     hebele = ["random","direct"]
     return random.choice(hebele)
 
 def istek():
+    global count 
     while(True):
+        count +=1
+        if(count==10):
+            os.system('cls' if os.name == 'nt' else 'clear')
+            colorprint.logo_screen()
+            
         url = args.url
         user_agent = {'User-agent': useragent.get_useragent()}
         if(yazitura() =="direct"):
