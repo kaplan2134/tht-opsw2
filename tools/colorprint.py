@@ -12,8 +12,9 @@ logo = """
    ╚═╝   ╚═╝  ╚═╝   ╚═╝
       Mentalistler
 """
-print(Fore.RED + logo + Fore.RESET)
-
+def logo_screen():
+    print(Fore.RED + logo + Fore.RESET)
+logo_screen()
 
 def colorprint(data, _type="i"):
     #i= info
