@@ -13,7 +13,8 @@ args = parser.parse_args()
 
 count = 0
 def yazitura():
-    hebele = ["random","direct"]
+    #hebele = ["random","direct"]
+    hebele = ["direct"]
     return random.choice(hebele)
 
 def istek():
